@@ -7,9 +7,10 @@ class MVVMPageGenerator {
     if (verifyClassName() && verifyPath()) {
       if (Platform.isLinux) {
         //make sh script work here
-        
+        Process.start('assets/page_generator.sh', [className!,path!],runInShell: true);
       } else if (Platform.isMacOS) {
         //make sh script work here
+        Process.start('assets/page_generator.sh', [className!,path!],runInShell: true);
       } else if (Platform.isWindows) {
         //make ps1 script work here
       } else {

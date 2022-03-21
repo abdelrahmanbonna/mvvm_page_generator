@@ -5,6 +5,7 @@ name="$(tr '[:lower:]' '[:upper:]' <<< ${foo:0:1})${foo:1}";
 # making dir
 echo "$name page is being generated....";
 mkdir $name;
+cd $2;
 cd $1;
 touch $1_view.dart;
 touch $1_viewmodel.dart;
