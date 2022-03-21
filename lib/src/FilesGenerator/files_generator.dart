@@ -4,15 +4,15 @@ import 'package:file/local.dart';
 import 'package:shell/shell.dart';
 
 abstract class FilesGenerator {
-  static final _shell = Shell();
-  static final _fileSys = const LocalFileSystem();
 
   static Future<bool> makeFolder(
     String name, {
     bool ignoreError = false,
     bool dontDrain = false,
+    String workingDirectory='lib',
   }) async {
     try {
+      final _shell = Shell(workingDirectory: workingDirectory);
       var cdCmd = await _shell.start(
         'mkdir',
         arguments: [
@@ -32,8 +32,10 @@ abstract class FilesGenerator {
     String path, {
     bool ignoreError = false,
     bool dontDrain = false,
+    String workingDirectory='lib',
   }) async {
     try {
+      final _shell = Shell(workingDirectory: workingDirectory);
       var cdCmd = await _shell.start(
         'cd',
         arguments: [
@@ -51,8 +53,13 @@ abstract class FilesGenerator {
 
   static Future<bool> generateService(
     String className,
+    {
+    String workingDirectory='lib',
+    }
   ) async {
     try {
+      final _shell = Shell(workingDirectory: workingDirectory);
+      final _fileSys = const LocalFileSystem();
       var echo = await _shell.start(
         'echo',
         arguments: [
@@ -70,8 +77,14 @@ abstract class FilesGenerator {
 
   static Future<bool> generateViewModel(
     String className,
+    {
+    String workingDirectory='lib',
+    }
   ) async {
     try {
+      final _shell = Shell(workingDirectory: workingDirectory);
+      final _fileSys = const LocalFileSystem();
+
       var echo = await _shell.start(
         'echo',
         arguments: [
@@ -90,8 +103,12 @@ abstract class FilesGenerator {
   static Future<bool> generateView(
     String className, {
     bool oldPmvvm = false,
+    String workingDirectory='lib',
   }) async {
     try {
+      final _shell = Shell(workingDirectory: workingDirectory);
+      final _fileSys = const LocalFileSystem();
+
       var echo = await _shell.start(
         'echo',
         arguments: [

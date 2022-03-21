@@ -7,7 +7,7 @@ const help = 'help';
 
 final argParser = ArgParser()
   ..addOption(className, abbr: 'c', help: 'Sets the name of the page.')
-  // ..addOption(path, abbr: 'p', help: 'Sets the page path.')
+  ..addOption(path, abbr: 'p', help: 'Sets the page path.')
   ..addFlag(help, abbr: 'h', help: 'Shows help.', negatable: false);
 
 void main(List<String> arguments) async {
@@ -20,7 +20,7 @@ void main(List<String> arguments) async {
 
     var sourceGenerator = MVVMPageGenerator(
       className: results[className],
-      // path: results[path],
+      path: results[path],
     );
     sourceGenerator.generatePages();
   } on FormatException catch (e) {

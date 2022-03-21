@@ -7,24 +7,39 @@ class MVVMPageGenerator {
   String? className, path;
 
   //class constructor
-  MVVMPageGenerator({this.className, this.path});
+  MVVMPageGenerator({this.className, this.path = 'lib'});
 
   /// the functions which generates the files
   void generatePages() {
     //if name is vaild
-    if (verifyClassName()
-        // && verifyPath()
-        ) {
+    if (verifyClassName() && verifyPath()) {
       if (Platform.isLinux || Platform.isWindows || Platform.isMacOS) {
-        FilesGenerator.generateService(
-          className!,
-        );
-        FilesGenerator.generateViewModel(
-          className!,
-        );
-        FilesGenerator.generateView(
-          className!,
-        );
+        FilesGenerator.makeFolder(
+          className![0].toUpperCase() + className!.substring(1),
+          workingDirectory: path!,
+        ).then((value) {
+          FilesGenerator.generateService(
+            className!,
+            workingDirectory: path! +
+                "/" +
+                className![0].toUpperCase() +
+                className!.substring(1),
+          );
+          FilesGenerator.generateViewModel(
+            className!,
+            workingDirectory: path! +
+                "/" +
+                className![0].toUpperCase() +
+                className!.substring(1),
+          );
+          FilesGenerator.generateView(
+            className!,
+            workingDirectory: path! +
+                "/" +
+                className![0].toUpperCase() +
+                className!.substring(1),
+          );
+        });
       } else {
         throw 'Error not Supported Platform';
       }
