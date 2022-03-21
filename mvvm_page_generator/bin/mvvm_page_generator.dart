@@ -20,7 +20,7 @@ void main(List<String> arguments) async {
 
     var sourceGenerator = MVVMPageGenerator(
       className: results[className],
-      path: results[path],
+      // path: results[path],
     );
     sourceGenerator.generatePages();
   } on FormatException catch (e) {
