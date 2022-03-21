@@ -11,24 +11,29 @@ class MVVMPageGenerator {
 
   /// the functions which generates the files
   void generatePages() {
-    //if name is vaild
+    //if name and path are vaild
     if (verifyClassName() && verifyPath()) {
       if (Platform.isLinux || Platform.isWindows || Platform.isMacOS) {
+        
+        //Make the main folder
         FilesGenerator.makeFolder(
           className[0].toUpperCase() + className.substring(1),
           workingDirectory: path,
         ).then((res) {
           if (res) {
+            //Generate service
             FilesGenerator.generateService(
               className,
               workingDirectory:
                   '$path/${className[0].toUpperCase() + className.substring(1)}',
             );
+            //Generate ViewModel
             FilesGenerator.generateViewModel(
               className,
               workingDirectory:
                   '$path/${className[0].toUpperCase() + className.substring(1)}',
             );
+            //Generate View
             FilesGenerator.generateView(
               className,
               workingDirectory:

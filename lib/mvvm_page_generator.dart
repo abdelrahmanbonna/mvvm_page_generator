@@ -1,4 +1,5 @@
-/// Support for doing something awesome.
+/// A Dart package for generating PMVVM pages given the class name and path.
+///  
 ///
 /// More dartdocs go here.
 library mvvm_page_generator;
