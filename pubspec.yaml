@@ -1,6 +1,6 @@
 name: mvvm_page_generator
 description: A Dart package for making MVVM page.
-version: 1.0.1
+version: 1.0.2
 repository: https://github.com/abdelrahmanbonna/mvvm_page_generator/tree/main/
 
 environment:
