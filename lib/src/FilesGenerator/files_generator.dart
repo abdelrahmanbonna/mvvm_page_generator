@@ -4,12 +4,11 @@ import 'package:file/local.dart';
 import 'package:shell/shell.dart';
 
 abstract class FilesGenerator {
-
   static Future<bool> makeFolder(
     String name, {
     bool ignoreError = false,
     bool dontDrain = false,
-    String workingDirectory='lib',
+    String workingDirectory = '/lib/',
   }) async {
     try {
       final _shell = Shell(workingDirectory: workingDirectory);
@@ -23,6 +22,7 @@ abstract class FilesGenerator {
       if (!dontDrain) await cdCmd.stderr.drain();
       return true;
     } on Exception catch (_, e) {
+      print('Error in file making');
       if (!ignoreError) print(e);
       return false;
     }
@@ -32,7 +32,7 @@ abstract class FilesGenerator {
     String path, {
     bool ignoreError = false,
     bool dontDrain = false,
-    String workingDirectory='lib',
+    String workingDirectory = '/lib/',
   }) async {
     try {
       final _shell = Shell(workingDirectory: workingDirectory);
@@ -46,17 +46,16 @@ abstract class FilesGenerator {
       if (!dontDrain) await cdCmd.stderr.drain();
       return true;
     } on Exception catch (_, e) {
+      print('Error file not found');
       if (!ignoreError) print(e);
       return false;
     }
   }
 
   static Future<bool> generateService(
-    String className,
-    {
-    String workingDirectory='lib',
-    }
-  ) async {
+    String className, {
+    String workingDirectory = '/lib/',
+  }) async {
     try {
       final _shell = Shell(workingDirectory: workingDirectory);
       final _fileSys = const LocalFileSystem();
@@ -66,7 +65,8 @@ abstract class FilesGenerator {
           "class ${className[0].toUpperCase() + className.substring(1)}Service {}",
         ],
       );
-      echo.stdout.writeToFile(_fileSys.file("${className}_service.dart"));
+      echo.stdout.writeToFile(
+          _fileSys.file("$workingDirectory/${className}_service.dart"));
       await echo.stderr.drain();
       return true;
     } on Exception catch (_, e) {
@@ -76,11 +76,9 @@ abstract class FilesGenerator {
   }
 
   static Future<bool> generateViewModel(
-    String className,
-    {
-    String workingDirectory='lib',
-    }
-  ) async {
+    String className, {
+    String workingDirectory = '/lib/',
+  }) async {
     try {
       final _shell = Shell(workingDirectory: workingDirectory);
       final _fileSys = const LocalFileSystem();
@@ -91,7 +89,8 @@ abstract class FilesGenerator {
           "import 'package:pmvvm/view_model.dart';\nclass ${className[0].toUpperCase() + className.substring(1)}ViewModel extends ViewModel {}",
         ],
       );
-      echo.stdout.writeToFile(_fileSys.file("${className}_viewmodel.dart"));
+      echo.stdout.writeToFile(
+          _fileSys.file("$workingDirectory/${className}_viewmodel.dart"));
       await echo.stderr.drain();
       return true;
     } on Exception catch (_, e) {
@@ -103,7 +102,7 @@ abstract class FilesGenerator {
   static Future<bool> generateView(
     String className, {
     bool oldPmvvm = false,
-    String workingDirectory='lib',
+    String workingDirectory = '/lib/',
   }) async {
     try {
       final _shell = Shell(workingDirectory: workingDirectory);
@@ -131,7 +130,8 @@ abstract class FilesGenerator {
               "}",
         ],
       );
-      echo.stdout.writeToFile(_fileSys.file("${className}_view.dart"));
+      echo.stdout.writeToFile(
+          _fileSys.file("$workingDirectory/${className}_view.dart"));
       await echo.stderr.drain();
       return true;
     } on Exception catch (_, e) {

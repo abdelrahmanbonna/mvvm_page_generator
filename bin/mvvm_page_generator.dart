@@ -6,9 +6,24 @@ const path = 'path';
 const help = 'help';
 
 final argParser = ArgParser()
-  ..addOption(className, abbr: 'c', help: 'Sets the name of the page.')
-  ..addOption(path, abbr: 'p', help: 'Sets the page path.')
-  ..addFlag(help, abbr: 'h', help: 'Shows help.', negatable: false);
+  ..addOption(
+    className,
+    abbr: 'c',
+    help: 'Sets the name of the page.',
+    mandatory: true,
+  )
+  ..addOption(
+    path,
+    abbr: 'p',
+    help: 'Sets the page path.',
+    mandatory: false,
+  )
+  ..addFlag(
+    help,
+    abbr: 'h',
+    help: 'Shows help.',
+    negatable: false,
+  );
 
 void main(List<String> arguments) async {
   try {
@@ -25,7 +40,7 @@ void main(List<String> arguments) async {
     sourceGenerator.generatePages();
   } on FormatException catch (e) {
     print(e.message);
-    print('');
+    print('---------------------------');
     print(argParser.usage);
   }
 }
