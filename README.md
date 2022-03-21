@@ -1,6 +1,6 @@
 # mvvm_page_generator
 
-A Dart package for making MVVM Flutter pages with cmd or terminal.
+A Dart package for making PMVVM Flutter pages with cmd or terminal.
 
 ## Features
 
