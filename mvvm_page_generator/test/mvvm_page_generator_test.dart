@@ -8,15 +8,12 @@ void main() {
     test('Testing if verifyClassName function works fine', () {
       assert(obj.verifyClassName() == true);
     });
-
-    test('Testing if verifyPath function works fine', () {
-      assert(obj.verifyPath() == true);
-    });
   });
 
   group('Generators group of tests', () {
     test('Testing if files generates', () {
       //TODO test generators here
+      
     });
   });
 }

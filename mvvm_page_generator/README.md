@@ -20,13 +20,13 @@ install it using `pub global activate`:
 Use this package as follows:
 
 ```bash
-mvvm_page_generator -c className -p /path/to/generation/folder
+dart run mvvm_page_generator -c className
 ```
 
 or
 
 ```bash
-dart pub global run mvvm_page_generator -c className -p /path/to/generation/folder
+dart pub global run mvvm_page_generator -c className
 ```
 
 ## Additional information

@@ -1,5 +1,5 @@
 name: mvvm_page_generator
-description: A starting point for Dart libraries or applications.
+description: A Dart package for making MVVM page.
 version: 1.0.0
 # homepage: https://www.example.com
 
@@ -10,6 +10,8 @@ environment:
 dependencies:
   path: ^1.8.0
   args: ^2.3.0
+  shell: ^2.0.0
+  file: ^6.1.2
 
 dev_dependencies:
   lints: ^1.0.0

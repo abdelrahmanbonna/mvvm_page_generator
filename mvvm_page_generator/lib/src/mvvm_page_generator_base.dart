@@ -1,24 +1,37 @@
 import 'dart:io';
 
+import 'package:mvvm_page_generator/src/FilesGenerator/files_generator.dart';
+
 class MVVMPageGenerator {
+  //declaring variables
   String? className, path;
+
+  //class constructor
   MVVMPageGenerator({this.className, this.path});
+
+  /// the functions which generates the files
   void generatePages() {
-    if (verifyClassName() && verifyPath()) {
-      if (Platform.isLinux) {
-        //make sh script work here
-        Process.start('assets/page_generator.sh', [className!,path!],runInShell: true);
-      } else if (Platform.isMacOS) {
-        //make sh script work here
-        Process.start('assets/page_generator.sh', [className!,path!],runInShell: true);
-      } else if (Platform.isWindows) {
-        //make ps1 script work here
+    //if name is vaild
+    if (verifyClassName()
+        // && verifyPath()
+        ) {
+      if (Platform.isLinux || Platform.isWindows || Platform.isMacOS) {
+        FilesGenerator.generateService(
+          className!,
+        );
+        FilesGenerator.generateViewModel(
+          className!,
+        );
+        FilesGenerator.generateView(
+          className!,
+        );
       } else {
         throw 'Error not Supported Platform';
       }
     }
   }
 
+  /// the function which validates the name
   bool verifyClassName() {
     if (className == null) {
       throw 'Error Class name should be specifed';
@@ -31,6 +44,7 @@ class MVVMPageGenerator {
     }
   }
 
+  /// the function which validates the path
   bool verifyPath() {
     if (path == null) {
       throw 'Error Path should be specifed';

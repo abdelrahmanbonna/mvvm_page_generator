@@ -152,10 +152,22 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "platform",
+      "rootUri": "file:///Users/abdelrahmanbonna/.pub-cache/hosted/pub.dartlang.org/platform-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "pool",
       "rootUri": "file:///Users/abdelrahmanbonna/.pub-cache/hosted/pub.dartlang.org/pool-1.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "process",
+      "rootUri": "file:///Users/abdelrahmanbonna/.pub-cache/hosted/pub.dartlang.org/process-4.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
     },
     {
       "name": "pub_semver",
@@ -184,6 +196,12 @@
     {
       "name": "shelf_web_socket",
       "rootUri": "file:///Users/abdelrahmanbonna/.pub-cache/hosted/pub.dartlang.org/shelf_web_socket-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "shell",
+      "rootUri": "file:///Users/abdelrahmanbonna/.pub-cache/hosted/pub.dartlang.org/shell-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -290,7 +308,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-03-21T07:36:33.565581Z",
+  "generated": "2022-03-21T10:20:50.146096Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }
