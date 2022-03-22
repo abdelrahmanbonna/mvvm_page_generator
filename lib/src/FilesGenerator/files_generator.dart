@@ -4,7 +4,6 @@ import 'package:file/local.dart';
 import 'package:shell/shell.dart';
 
 abstract class FilesGenerator {
-
   //Function to make a folder in a specific directory
   static Future<bool> makeFolder(
     String name, {
@@ -30,7 +29,7 @@ abstract class FilesGenerator {
     }
   }
 
-  // Function to go to a folder 
+  // Function to go to a folder
   /// used to check if the folder exists or not
   static Future<bool> goToFolder(
     String path, {
@@ -93,7 +92,7 @@ abstract class FilesGenerator {
         'echo',
         arguments: [
           "import 'package:pmvvm/view_model.dart';\n"
-          "class ${className[0].toUpperCase() + className.substring(1)}ViewModel extends ViewModel {}",
+              "class ${className[0].toUpperCase() + className.substring(1)}ViewModel extends ViewModel {}",
         ],
       );
       echo.stdout.writeToFile(
