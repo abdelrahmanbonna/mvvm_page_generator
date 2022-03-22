@@ -4,6 +4,8 @@ import 'package:file/local.dart';
 import 'package:shell/shell.dart';
 
 abstract class FilesGenerator {
+
+  //Function to make a folder in a specific directory
   static Future<bool> makeFolder(
     String name, {
     bool ignoreError = false,
@@ -28,6 +30,8 @@ abstract class FilesGenerator {
     }
   }
 
+  // Function to go to a folder 
+  /// used to check if the folder exists or not
   static Future<bool> goToFolder(
     String path, {
     bool ignoreError = false,
@@ -52,6 +56,7 @@ abstract class FilesGenerator {
     }
   }
 
+  //Function used to make service file
   static Future<bool> generateService(
     String className, {
     String workingDirectory = '/lib/',
@@ -75,6 +80,7 @@ abstract class FilesGenerator {
     }
   }
 
+  //Function used to make viewmodel file
   static Future<bool> generateViewModel(
     String className, {
     String workingDirectory = '/lib/',
@@ -99,6 +105,7 @@ abstract class FilesGenerator {
     }
   }
 
+  //Function used to make view file
   static Future<bool> generateView(
     String className, {
     bool oldPmvvm = false,
