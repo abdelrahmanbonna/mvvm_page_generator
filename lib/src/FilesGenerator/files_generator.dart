@@ -10,7 +10,7 @@ abstract class FilesGenerator {
     String name, {
     bool ignoreError = false,
     bool dontDrain = false,
-    String workingDirectory = '/lib/',
+    String workingDirectory = 'lib/',
   }) async {
     try {
       final _shell = Shell(workingDirectory: workingDirectory);
@@ -36,7 +36,7 @@ abstract class FilesGenerator {
     String path, {
     bool ignoreError = false,
     bool dontDrain = false,
-    String workingDirectory = '/lib/',
+    String workingDirectory = 'lib/',
   }) async {
     try {
       final _shell = Shell(workingDirectory: workingDirectory);
@@ -59,7 +59,7 @@ abstract class FilesGenerator {
   //Function used to make service file
   static Future<bool> generateService(
     String className, {
-    String workingDirectory = '/lib/',
+    String workingDirectory = 'lib/',
   }) async {
     try {
       final _shell = Shell(workingDirectory: workingDirectory);
@@ -83,7 +83,7 @@ abstract class FilesGenerator {
   //Function used to make viewmodel file
   static Future<bool> generateViewModel(
     String className, {
-    String workingDirectory = '/lib/',
+    String workingDirectory = 'lib/',
   }) async {
     try {
       final _shell = Shell(workingDirectory: workingDirectory);
@@ -92,7 +92,8 @@ abstract class FilesGenerator {
       var echo = await _shell.start(
         'echo',
         arguments: [
-          "import 'package:pmvvm/view_model.dart';\nclass ${className[0].toUpperCase() + className.substring(1)}ViewModel extends ViewModel {}",
+          "import 'package:pmvvm/view_model.dart';\n"
+          "class ${className[0].toUpperCase() + className.substring(1)}ViewModel extends ViewModel {}",
         ],
       );
       echo.stdout.writeToFile(
@@ -109,7 +110,7 @@ abstract class FilesGenerator {
   static Future<bool> generateView(
     String className, {
     bool oldPmvvm = false,
-    String workingDirectory = '/lib/',
+    String workingDirectory = 'lib/',
   }) async {
     try {
       final _shell = Shell(workingDirectory: workingDirectory);
