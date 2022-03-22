@@ -1,3 +1,5 @@
-## 1.0.2
+## 1.0.3
 
-- Path update version.
+- Unit tests cases added.
+- More comments and documentation added.
+- Default path fixed.

@@ -4,7 +4,7 @@ A Dart package for making PMVVM Flutter pages with cmd or terminal.
 
 ## Features
 
-* makes a page with it's view, viewmodel, and service.
+* makes a page with it's view, viewmodel, and service ready to be used in any pmvvm project.
 
 ## Getting started
 

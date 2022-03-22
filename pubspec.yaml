@@ -1,6 +1,6 @@
 name: mvvm_page_generator
-description: A Dart package for making PMVVM pages given the path and class name and using the shell commands.
-version: 1.0.2
+description: A Dart package for making PMVVM pages given class name and the path (optional) and using the shell commands.
+version: 1.0.3
 repository: https://github.com/abdelrahmanbonna/mvvm_page_generator/tree/main/
 
 environment:

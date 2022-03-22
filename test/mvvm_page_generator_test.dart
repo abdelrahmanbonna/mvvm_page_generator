@@ -10,9 +10,9 @@ void main() {
       assert(obj.verifyClassName() == true);
     });
 
-    test('Testing if verifyPath function works fine', () {
-      assert(obj.verifyPath() == true);
-    });
+    // test('Testing if verifyPath function works fine', () {
+    //   assert(obj.verifyPath() == true);
+    // });
   });
 
   group('Generators group of tests', () {
