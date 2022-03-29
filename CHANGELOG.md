@@ -1,5 +1,3 @@
-# 1.0.4
+# 1.0.5
 
-- Unit tests cases added.
-- More comments and documentation added.
-- Default path fixed.
+- class name length Fixed

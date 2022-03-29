@@ -53,7 +53,7 @@ class MVVMPageGenerator {
   bool verifyClassName() {
     if (className.isEmpty) {
       throw 'Error Class name should not be empty';
-    } else if (!RegExp(r'^[a-zA-Z0-9]{4,10}$').hasMatch(className)) {
+    } else if (!RegExp(r'^[a-zA-Z0-9]{2,50}$').hasMatch(className)) {
       throw 'Error Class name should not have symbols';
     } else {
       return true;

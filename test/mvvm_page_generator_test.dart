@@ -10,6 +10,12 @@ void main() {
       assert(obj.verifyClassName() == true);
     });
 
+    var obj1 =
+        MVVMPageGenerator(className: 'homeScreenPage', path: '/HomePages/');
+
+    test('Testing if verifyClassName function works fine with large names', () {
+      assert(obj1.verifyClassName() == true);
+    });
     // test('Testing if verifyPath function works fine', () {
     //   assert(obj.verifyPath() == true);
     // });
