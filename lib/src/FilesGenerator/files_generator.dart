@@ -4,7 +4,7 @@ import 'package:file/local.dart';
 import 'package:shell/shell.dart';
 
 abstract class FilesGenerator {
-  //Function to make a folder in a specific directory
+  ///Function to make a folder in a specific directory
   static Future<bool> makeFolder(
     String name, {
     bool ignoreError = false,
@@ -29,8 +29,9 @@ abstract class FilesGenerator {
     }
   }
 
-  // Function to go to a folder
-  /// used to check if the folder exists or not
+  /// Function to go to a folder 
+  /// 
+  /// Also used to check if the folder exists or not
   static Future<bool> goToFolder(
     String path, {
     bool ignoreError = false,
@@ -55,7 +56,7 @@ abstract class FilesGenerator {
     }
   }
 
-  //Function used to make service file
+  /// Function used to make service file
   static Future<bool> generateService(
     String className, {
     String workingDirectory = 'lib/',
@@ -66,6 +67,7 @@ abstract class FilesGenerator {
       var echo = await _shell.start(
         'echo',
         arguments: [
+          "/// This is where you make API calls for ${className[0].toUpperCase() + className.substring(1)} \n"
           "class ${className[0].toUpperCase() + className.substring(1)}Service {}",
         ],
       );
@@ -79,7 +81,7 @@ abstract class FilesGenerator {
     }
   }
 
-  //Function used to make viewmodel file
+  /// Function used to make viewmodel file
   static Future<bool> generateViewModel(
     String className, {
     String workingDirectory = 'lib/',
@@ -92,7 +94,15 @@ abstract class FilesGenerator {
         'echo',
         arguments: [
           "import 'package:pmvvm/view_model.dart';\n"
-              "class ${className[0].toUpperCase() + className.substring(1)}ViewModel extends ViewModel {}",
+          "/// This is where you implement your logic for ${className[0].toUpperCase() + className.substring(1)} \n"
+              "class ${className[0].toUpperCase() + className.substring(1)}ViewModel extends ViewModel {"
+              "// Finals \n\n"
+              "// Non-nullables \n\n"
+              "// Nullables \n\n"
+              "// Getters \n\n"
+              "// Setters \n\n"
+              "// Functions \n\n"
+              "}",
         ],
       );
       echo.stdout.writeToFile(
@@ -105,7 +115,7 @@ abstract class FilesGenerator {
     }
   }
 
-  //Function used to make view file
+  /// Function used to make view file
   static Future<bool> generateView(
     String className, {
     bool oldPmvvm = false,
@@ -133,6 +143,7 @@ abstract class FilesGenerator {
               "const ${className[0].toUpperCase() + className.substring(1)}View({Key? key}) : super(key: key, reactive: true); \n"
               "@override \n"
               "Widget render(BuildContext context, ${className[0].toUpperCase() + className.substring(1)}ViewModel viewModel) { \n"
+              "//TODO: Remove this and add your implementation\n"
               " throw 'Error page not emplemented'; \n }\n"
               "}",
         ],
