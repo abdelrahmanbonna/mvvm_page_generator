@@ -29,8 +29,8 @@ abstract class FilesGenerator {
     }
   }
 
-  /// Function to go to a folder 
-  /// 
+  /// Function to go to a folder
+  ///
   /// Also used to check if the folder exists or not
   static Future<bool> goToFolder(
     String path, {
@@ -68,7 +68,7 @@ abstract class FilesGenerator {
         'echo',
         arguments: [
           "/// This is where you make API calls for ${className[0].toUpperCase() + className.substring(1)} \n"
-          "class ${className[0].toUpperCase() + className.substring(1)}Service {}",
+              "class ${className[0].toUpperCase() + className.substring(1)}Service {}",
         ],
       );
       echo.stdout.writeToFile(
@@ -94,7 +94,7 @@ abstract class FilesGenerator {
         'echo',
         arguments: [
           "import 'package:pmvvm/view_model.dart';\n"
-          "/// This is where you implement your logic for ${className[0].toUpperCase() + className.substring(1)} \n"
+              "/// This is where you implement your logic for ${className[0].toUpperCase() + className.substring(1)} \n"
               "class ${className[0].toUpperCase() + className.substring(1)}ViewModel extends ViewModel {"
               "// Finals \n\n"
               "// Non-nullables \n\n"

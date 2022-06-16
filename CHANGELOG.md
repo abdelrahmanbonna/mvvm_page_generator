@@ -1,3 +1,3 @@
-# 1.0.6
+# 1.0.7
 
 - Adding comments to the generated files
